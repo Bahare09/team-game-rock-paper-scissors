@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+function Game() {
   const choices = [
     { name: "Rock", icon: "rock-icon" },
     { name: "Paper", icon: "paper-icon" },
@@ -95,4 +95,4 @@ function App() {
   );
 }
 
-export default App;
+export default Game;
