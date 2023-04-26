@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
@@ -6,7 +7,9 @@ export default function Welcome() {
       <h1>Rock, Paper, Scissors</h1>
       <p>Do you dare to play</p>
       <p>this game?</p>
-      <button>Play</button>
+      <Link to="/login">
+        <button>Play</button>
+      </Link>
     </div>
   );
 }
