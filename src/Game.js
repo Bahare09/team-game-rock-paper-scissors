@@ -22,6 +22,7 @@ function Game() {
     "head-icon **",
     "head-icon **",
   ]);
+  const [showModal, setShowModal] = useState(false);
 
   const handleClick = (userChoice) => {
     setUser(userChoice.icon);
@@ -46,6 +47,7 @@ function Game() {
           "red-head-icon **",
           "red-head-icon **",
         ]);
+        setShowModal(true);
       }
     } else if (userChoice === computerChoice) {
       setResult("**Tie**");
@@ -64,8 +66,19 @@ function Game() {
           "red-head-icon **",
           "red-head-icon **",
         ]);
+        setShowModal(true);
       }
     }
+  };
+  const restartGame = () => {
+    setUser("close-hand-icon");
+    setComputer("close-hand-icon");
+    setResult("VS");
+    setUserPoint(0);
+    setCompPoint(0);
+    setShowModal(false);
+    setCompHead(["head-icon **", "head-icon **", "head-icon **"]);
+    setUserHead(["head-icon **", "head-icon **", "head-icon **"]);
   };
 
   return (
@@ -90,6 +103,20 @@ function Game() {
           <h1>computer</h1>
           <div>{compHead}</div>
         </div>
+        {showModal && (
+          <div className="modal">
+            <div className="modal-content">
+              {result === "You Win!!" ? (
+                <h2>Congratulations! You Win!</h2>
+              ) : result === "Computer Wins!" ? (
+                <h2>Oops! Computer Wins!</h2>
+              ) : (
+                <h2>Game Over!</h2>
+              )}
+              <button onClick={restartGame}>Restart Game</button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
