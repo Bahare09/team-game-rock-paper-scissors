@@ -1,13 +1,19 @@
 import { useState, React } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Welcome() {
   const [name, setName] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleInput = (event) => {
     event.preventDefault();
     setName(event.target.value);
   };
+  //to pass the useState 'name' tp the navigate Page
+  const handleSubmit = () => {
+    navigate("/game", { state: { name } });
+  };
+
   return (
     <div className="main">
       <h1>Rock, Paper, Scissors</h1>
@@ -16,11 +22,9 @@ export default function Welcome() {
       <form onSubmit={handleSubmit}>
         <label>
           Provide your Name:
-          <input type="text" value={name} onChange={handleSubmit} />
+          <input type="text" value={name} onChange={handleInput} />
         </label>
-        <Link to="/game">
-          <input type="submit" />
-        </Link>
+        <input type="submit" />
       </form>
     </div>
   );

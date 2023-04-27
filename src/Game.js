@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./App.css";
 
 function Game() {
+  //to import the useState name from Welcome Page
+  //access it like ==>{location.state.name}
+  const location = useLocation();
+
   const choices = [
     { name: "Rock", icon: "rock-icon" },
     { name: "Paper", icon: "paper-icon" },
@@ -71,7 +76,7 @@ function Game() {
   return (
     <div className="home">
       <div className="container">
-        <h1>Rock,Paper,Scissors </h1>
+        <h1>Rock,Paper,Scissors</h1>
         <div> {user}</div>
         <h1>{result}</h1>
         <div>{computer}</div>
