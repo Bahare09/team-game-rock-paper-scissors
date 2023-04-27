@@ -101,7 +101,7 @@ function Game() {
           ))}
         </div>
         <div className="scoreboard">
-          <h1>username</h1>
+          <h1>{location.state.name}</h1>
           <div>{userHead}</div>
         </div>
         <div className="scoreboard">
