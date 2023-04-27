@@ -1,5 +1,8 @@
 /* App.css */
-
+:root {
+  --title-font: "Gloria Hallelujah", cursive;
+  --p-font: "Goldman", cursive;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -31,4 +34,15 @@
   color: #fff;
   cursor: pointer;
   border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--title-font);
+}
+
+p {
+  font-family: var(--p-font);
 }

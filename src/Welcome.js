@@ -1,5 +1,6 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Welcome.css";
 
 export default function Welcome() {
   const [name, setName] = useState("");
