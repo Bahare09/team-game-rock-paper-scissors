@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
 import "./Game.css";
 
@@ -7,6 +7,7 @@ function Game() {
   //to import the useState name from Welcome Page
   //access it like ==>{location.state.name}
   const location = useLocation();
+  const navigate = useNavigate();
 
   const choices = [
     { name: "Rock", icon: "rock" },
@@ -36,7 +37,6 @@ function Game() {
   const [animationClass, setAnimationClass] = useState("");
 
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
-  // const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     setUser((prevUser) => {
@@ -62,12 +62,16 @@ function Game() {
   useEffect(() => {
     if (showModal) {
       setButtonsDisabled(true);
-      console.log("if" + buttonsDisabled);
     } else {
       setButtonsDisabled(false);
-      console.log("else:" + buttonsDisabled);
     }
   }, [showModal]);
+
+  const handleAnotherNameClick = (event) => {
+    event.preventDefault();
+    navigate("/");
+    restartGame();
+  };
 
   const handleClick = (userChoice) => {
     setButtonsDisabled(true);
@@ -236,6 +240,15 @@ function Game() {
             <div className="head_group">{compHead}</div>
           </div>
         </div>
+
+        <button
+          type="button"
+          className="btn name_btn"
+          onClick={handleAnotherNameClick}
+        >
+          <span>Click!</span>
+          <span>Another name?</span>
+        </button>
         {showModal && (
           <div className="modal">
             <div className="modal-content">
