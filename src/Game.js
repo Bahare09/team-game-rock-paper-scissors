@@ -62,17 +62,15 @@ function Game() {
   useEffect(() => {
     if (showModal) {
       setButtonsDisabled(true);
-      console.log("if" + buttonsDisabled)
+      console.log("if" + buttonsDisabled);
     } else {
       setButtonsDisabled(false);
       console.log("else:" + buttonsDisabled);
     }
   }, [showModal]);
 
-
   const handleClick = (userChoice) => {
-    
-    setButtonsDisabled(true)
+    setButtonsDisabled(true);
     // reset the result and animation states
     setResult("VS");
     setUser(
@@ -111,18 +109,15 @@ function Game() {
           alt="hand"
         />
       );
-      
+
       // Set the animation class to trigger the scale animation
       setAnimationClass("scale");
 
       // Wait for the scale animation to finish, then remove the animation class
       setTimeout(() => {
         setAnimationClass("");
-        setButtonsDisabled(false);
       }, 1000);
-
-      
-
+      setButtonsDisabled(false);
       if (
         (userChoice.name === "Rock" && computerChoice.name === "Scissors") ||
         (userChoice.name === "Paper" && computerChoice.name === "Rock") ||
@@ -150,11 +145,7 @@ function Game() {
             <img src="./media/red_head.webp" alt="red head" />,
             <img src="./media/red_head.webp" alt="red head" />,
           ]);
-          
-            setButtonsDisabled(true);
-          
           setShowModal(true);
-          
         }
       } else if (userChoice === computerChoice) {
         setResult("**Tie**");
@@ -181,17 +172,12 @@ function Game() {
             <img src="./media/red_head.webp" alt="red head" />,
             <img src="./media/red_head.webp" alt="red head" />,
           ]);
-          
-            setButtonsDisabled(true);
-          
           setShowModal(true);
-          
         }
       }
     }, 2000);
   };
   const restartGame = () => {
-    
     setUser(
       <img className="left_hand" src="./media/left_rock.webp" alt="rock hand" />
     );
