@@ -1,7 +1,6 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Welcome.css";
-import Header from "./Header";
 
 export default function Welcome() {
   const [name, setName] = useState("");
@@ -13,17 +12,23 @@ export default function Welcome() {
     setName(event.target.value);
     setError(false);
   };
+
+  //formatting the name, so it is without space, with first capital letter
+  const formatString = (str) => {
+    const trimmed = str.trim();
+    return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+  };
+
   //to pass the useState 'name' tp the navigate Page
   const handleSubmit = (event) => {
     event.preventDefault();
     if (name.trim() !== "") {
-      navigate("/game", { state: { name } });
+      navigate("/game", { state: { name: formatString(name) } });
     } else setError(true);
   };
 
   return (
     <>
-      <Header />
       <div className="main">
         <img src="/media/left_skeleton.webp" alt="skeleton" />
         <div className="main-content">
@@ -39,7 +44,7 @@ export default function Welcome() {
                 required
               />
             </label>
-            <button class="btn">
+            <button className="btn">
               <span>Click!</span>
               <span>Play</span>
             </button>
