@@ -24,20 +24,21 @@ function Game() {
   const [userPoint, setUserPoint] = useState(0);
   const [compPoint, setCompPoint] = useState(0);
   const [compHead, setCompHead] = useState([
-    <img src="./media/blue_head.webp" alt="blue head" />,
-    <img src="./media/blue_head.webp" alt="blue head" />,
-    <img src="./media/blue_head.webp" alt="blue head" />,
+    <img key={0} src="./media/blue_head.webp" alt="blue head" />,
+    <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+    <img key={2} src="./media/blue_head.webp" alt="blue head" />,
   ]);
   const [userHead, setUserHead] = useState([
-    <img src="./media/blue_head.webp" alt="blue head" />,
-    <img src="./media/blue_head.webp" alt="blue head" />,
-    <img src="./media/blue_head.webp" alt="blue head" />,
+    <img key={0} src="./media/blue_head.webp" alt="blue head" />,
+    <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+    <img key={2} src="./media/blue_head.webp" alt="blue head" />,
   ]);
   const [showModal, setShowModal] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
 
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
+  //updating animationClass each time it was called
   useEffect(() => {
     setUser((prevUser) => {
       return (
@@ -59,6 +60,7 @@ function Game() {
     });
   }, [animationClass]);
 
+  //for disabling buttons when after the pop up window
   useEffect(() => {
     if (showModal) {
       setButtonsDisabled(true);
@@ -131,23 +133,23 @@ function Game() {
         setUserPoint(userPoint + 1);
         if (userPoint === 0) {
           setUserHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+            <img key={2} src="./media/blue_head.webp" alt="blue head" />,
           ]);
         }
         if (userPoint === 1) {
           setUserHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/red_head.webp" alt="red head" />,
+            <img key={2} src="./media/blue_head.webp" alt="blue head" />,
           ]);
         }
         if (userPoint === 2) {
           setUserHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/red_head.webp" alt="red head" />,
+            <img key={2} src="./media/red_head.webp" alt="red head" />,
           ]);
           setShowModal(true);
         }
@@ -158,29 +160,30 @@ function Game() {
         setCompPoint(compPoint + 1);
         if (compPoint === 0) {
           setCompHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+            <img key={2} src="./media/blue_head.webp" alt="blue head" />,
           ]);
         }
         if (compPoint === 1) {
           setCompHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/red_head.webp" alt="red head" />,
+            <img key={2} src="./media/blue_head.webp" alt="blue head" />,
           ]);
         }
         if (compPoint === 2) {
           setCompHead([
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
-            <img src="./media/red_head.webp" alt="red head" />,
+            <img key={0} src="./media/red_head.webp" alt="red head" />,
+            <img key={1} src="./media/red_head.webp" alt="red head" />,
+            <img key={2} src="./media/red_head.webp" alt="red head" />,
           ]);
           setShowModal(true);
         }
       }
     }, 2000);
   };
+
   const restartGame = () => {
     setUser(
       <img className="left_hand" src="./media/left_rock.webp" alt="rock hand" />
@@ -197,14 +200,14 @@ function Game() {
     setCompPoint(0);
     setShowModal(false);
     setCompHead([
-      <img src="./media/blue_head.webp" alt="blue head" />,
-      <img src="./media/blue_head.webp" alt="blue head" />,
-      <img src="./media/blue_head.webp" alt="blue head" />,
+      <img key={0} src="./media/blue_head.webp" alt="blue head" />,
+      <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+      <img key={2} src="./media/blue_head.webp" alt="blue head" />,
     ]);
     setUserHead([
-      <img src="./media/blue_head.webp" alt="blue head" />,
-      <img src="./media/blue_head.webp" alt="blue head" />,
-      <img src="./media/blue_head.webp" alt="blue head" />,
+      <img key={0} src="./media/blue_head.webp" alt="blue head" />,
+      <img key={1} src="./media/blue_head.webp" alt="blue head" />,
+      <img key={2} src="./media/blue_head.webp" alt="blue head" />,
     ]);
   };
 
@@ -260,7 +263,7 @@ function Game() {
                 <h2>Game Over!</h2>
               )}
             </div>
-            <button class="btn btn-modal" onClick={restartGame}>
+            <button className="btn btn-modal" onClick={restartGame}>
               <span>Click!</span>
               <span>Restart</span>
             </button>
