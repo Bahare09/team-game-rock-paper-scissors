@@ -1,5 +1,7 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Welcome.css";
+import Header from "./Header";
 
 export default function Welcome() {
   const [name, setName] = useState("");
@@ -15,17 +17,31 @@ export default function Welcome() {
   };
 
   return (
-    <div className="main">
-      <h1>Rock, Paper, Scissors</h1>
-      <p>Do you dare to play</p>
-      <p>this game?</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Provide your Name:
-          <input type="text" value={name} onChange={handleInput} />
-        </label>
-        <input type="submit" />
-      </form>
-    </div>
+    <>
+      <Header />
+      <div className="main">
+        <img src="/media/left_skeleton.webp" alt="skeleton" />
+        <div className="main-content">
+          <h3>Do you dare to play this game?</h3>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <span>Provide your Name:</span>
+              <input
+                className="input-name"
+                type="text"
+                value={name}
+                onChange={handleInput}
+                required
+              />
+            </label>
+            <button class="btn">
+              <span>Click!</span>
+              <span>Play</span>
+            </button>
+          </form>
+        </div>
+        <img src="/media/right_skeleton.webp" alt="skeleton" />
+      </div>
+    </>
   );
 }

@@ -1,0 +1,63 @@
+/* design animation for title */
+
+h1 {
+  padding: 0 20px;
+}
+
+#shadow {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 10px;
+  color: var(--blue);
+  text-shadow: 0 0 2px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
+    0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+}
+
+#glow {
+  animation: neon1 linear infinite 2s;
+  will-change: opacity;
+}
+
+#blink {
+  animation: blink linear infinite 2s;
+}
+
+@keyframes neon1 {
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes blink {
+  70% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0;
+  }
+  83% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0;
+  }
+  92.5% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  #shadow {
+    margin-top: 50px;
+  }
+}

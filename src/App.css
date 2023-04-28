@@ -1,4 +1,28 @@
 /* App.css */
+:root {
+  --title-font: "Gloria Hallelujah", cursive;
+  --p-font: "Goldman", cursive;
+  --blue: #88b5ef;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: block;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--title-font);
+}
+
+p {
+  font-family: var(--p-font);
+}
 
 .modal {
   position: fixed;
