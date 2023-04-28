@@ -150,7 +150,7 @@ function Game() {
           <div className="buttons">
             {choices.map((choice, index) => (
               <button
-                className="btn"
+                className="custom-btn button"
                 key={index}
                 onClick={() => handleClick(choice)}
               >
