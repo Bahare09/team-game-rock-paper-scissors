@@ -1,7 +1,7 @@
 import { useState, React } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Welcome.css";
-import Header from "./Header";
+
 
 export default function Welcome() {
   const [name, setName] = useState("");
@@ -23,7 +23,6 @@ export default function Welcome() {
 
   return (
     <>
-      <Header />
       <div className="main">
         <img src="/media/left_skeleton.webp" alt="skeleton" />
         <div className="main-content">

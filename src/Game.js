@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./App.css";
-import Header from "./Header";
 import "./Game.css";
 
 function Game() {
@@ -36,6 +35,9 @@ function Game() {
   const [showModal, setShowModal] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
 
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
+  // const [gameOver, setGameOver] = useState(false);
+
   useEffect(() => {
     setUser((prevUser) => {
       return (
@@ -57,7 +59,20 @@ function Game() {
     });
   }, [animationClass]);
 
+  useEffect(() => {
+    if (showModal) {
+      setButtonsDisabled(true);
+      console.log("if" + buttonsDisabled)
+    } else {
+      setButtonsDisabled(false);
+      console.log("else:" + buttonsDisabled);
+    }
+  }, [showModal]);
+
+
   const handleClick = (userChoice) => {
+    
+    setButtonsDisabled(true)
     // reset the result and animation states
     setResult("VS");
     setUser(
@@ -96,14 +111,17 @@ function Game() {
           alt="hand"
         />
       );
-
+      
       // Set the animation class to trigger the scale animation
       setAnimationClass("scale");
 
       // Wait for the scale animation to finish, then remove the animation class
       setTimeout(() => {
         setAnimationClass("");
+        setButtonsDisabled(false);
       }, 1000);
+
+      
 
       if (
         (userChoice.name === "Rock" && computerChoice.name === "Scissors") ||
@@ -132,7 +150,11 @@ function Game() {
             <img src="./media/red_head.webp" alt="red head" />,
             <img src="./media/red_head.webp" alt="red head" />,
           ]);
+          
+            setButtonsDisabled(true);
+          
           setShowModal(true);
+          
         }
       } else if (userChoice === computerChoice) {
         setResult("**Tie**");
@@ -159,12 +181,17 @@ function Game() {
             <img src="./media/red_head.webp" alt="red head" />,
             <img src="./media/red_head.webp" alt="red head" />,
           ]);
+          
+            setButtonsDisabled(true);
+          
           setShowModal(true);
+          
         }
       }
     }, 2000);
   };
   const restartGame = () => {
+    
     setUser(
       <img className="left_hand" src="./media/left_rock.webp" alt="rock hand" />
     );
@@ -193,7 +220,6 @@ function Game() {
 
   return (
     <div className="home">
-      <Header />
       <div className="game_container">
         <div className="hands_container">
           {user}
@@ -208,6 +234,7 @@ function Game() {
                 className="custom-btn button"
                 key={index}
                 onClick={() => handleClick(choice)}
+                disabled={buttonsDisabled}
               >
                 {choice.name}
               </button>
@@ -215,11 +242,11 @@ function Game() {
           </div>
 
           <div className="scoreboard scoreboard_1">
-            <h1>{location.state.name}</h1>
+            <h1 className="board-text">{location.state.name}</h1>
             <div className="head_group">{userHead}</div>
           </div>
           <div className="scoreboard scoreboard_2">
-            <h1>Computer</h1>
+            <h1 className="board-text">Computer</h1>
             <div className="head_group">{compHead}</div>
           </div>
         </div>
@@ -233,8 +260,11 @@ function Game() {
               ) : (
                 <h2>Game Over!</h2>
               )}
-              <button onClick={restartGame}>Restart Game</button>
             </div>
+            <button class="btn btn-modal" onClick={restartGame}>
+              <span>Click!</span>
+              <span>Restart</span>
+            </button>
           </div>
         )}
       </div>

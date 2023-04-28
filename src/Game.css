@@ -82,7 +82,6 @@
   background: linear-gradient(180deg, #88b5ef 0%, #cccccc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   font-size: 30px;
   text-align: center;
   padding: 0;
@@ -112,6 +111,15 @@
 }
 
 .button {
+  color: #bb0b01;
+  box-shadow: 0 0 5px #bb0b01, 0 0 5px #d60800 inset;
+  border: 1px solid #bb0b01;
+  z-index: 1;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+.button:not(:disabled){
   color: #88b5ef;
   box-shadow: 0 0 5px #88b5ef, 0 0 5px #0bf4f3 inset;
   border: 1px solid #88b5ef;
@@ -119,6 +127,7 @@
   font-size: 20px;
   margin: 10px auto;
 }
+
 .button:after {
   position: absolute;
   content: "";
@@ -131,7 +140,7 @@
   transition: all 0.3s ease;
 }
 
-.button:hover:after {
+.button:not(:disabled):hover:after {
   top: 0;
   height: 100%;
 }
@@ -139,18 +148,30 @@
 /* scoreboards */
 .scoreboards_buttons {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
-    "buttons buttons"
-    "score1 score2";
+    "buttons"
+    "score1"
+    "score2";
   justify-items: center;
 }
 
 .scoreboard {
-  border: 1px solid var(--blue);
-  width: 45%;
-  width: 150px;
+  width: 240px;
+  height: 190px;
+  border: 8px solid #88b5ef;
+  border-top: 50px solid #88b5ef;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.board-text{
+  position: relative;
+  top: -65px;
+  color: black;
+  font-family: var(--p-font);
 }
 
 .scoreboard_1 {
@@ -159,6 +180,15 @@
 
 .scoreboard_2 {
   grid-area: score2;
+}
+
+.head_group{
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-30%,-180%);
+  display: flex;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
