@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
@@ -34,80 +34,135 @@ function Game() {
     <img src="./media/blue_head.webp" alt="blue head" />,
   ]);
   const [showModal, setShowModal] = useState(false);
+  const [animationClass, setAnimationClass] = useState("");
+
+  useEffect(() => {
+    setUser((prevUser) => {
+      return (
+        <img
+          src={prevUser.props.src}
+          className={`left_hand ${animationClass}`}
+          alt="hand"
+        />
+      );
+    });
+    setComputer((prevComputer) => {
+      return (
+        <img
+          src={prevComputer.props.src}
+          className={`right_hand ${animationClass}`}
+          alt="hand"
+        />
+      );
+    });
+  }, [animationClass]);
 
   const handleClick = (userChoice) => {
+    // reset the result and animation states
+    setResult("VS");
     setUser(
       <img
-        className="left_hand"
-        src={`./media/left_${userChoice.icon}.webp`}
-        alt="hand"
+        src="./media/left_rock.webp"
+        className={`left_hand ${animationClass}`}
+        alt="rock hand"
       />
     );
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     setComputer(
       <img
-        className="right_hand"
-        src={`./media/right_${computerChoice.icon}.webp`}
-        alt="hand"
+        src="./media/right_rock.webp"
+        className={`right_hand ${animationClass}`}
+        alt="rock hand"
       />
     );
-    if (
-      (userChoice.name === "Rock" && computerChoice.name === "Scissors") ||
-      (userChoice.name === "Paper" && computerChoice.name === "Rock") ||
-      (userChoice.name === "Scissors" && computerChoice.name === "Paper")
-    ) {
-      setResult("You Win!!");
-      setUserPoint(userPoint + 1);
-      if (userPoint === 0) {
-        setUserHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-        ]);
+
+    // Set the animation class to trigger the up-down animation
+    setAnimationClass("up-down");
+
+    // Wait for the up-down animation to finish, then switch to the new image
+    setTimeout(() => {
+      setUser(
+        <img
+          src={`./media/left_${userChoice.icon}.webp`}
+          className={`left_hand ${animationClass}`}
+          alt="hand"
+        />
+      );
+      const computerChoice =
+        choices[Math.floor(Math.random() * choices.length)];
+      setComputer(
+        <img
+          src={`./media/right_${computerChoice.icon}.webp`}
+          className={`right_hand ${animationClass}`}
+          alt="hand"
+        />
+      );
+
+      // Set the animation class to trigger the scale animation
+      setAnimationClass("scale");
+
+      // Wait for the scale animation to finish, then remove the animation class
+      setTimeout(() => {
+        setAnimationClass("");
+      }, 1000);
+
+      if (
+        (userChoice.name === "Rock" && computerChoice.name === "Scissors") ||
+        (userChoice.name === "Paper" && computerChoice.name === "Rock") ||
+        (userChoice.name === "Scissors" && computerChoice.name === "Paper")
+      ) {
+        setResult("You Win!!");
+        setUserPoint(userPoint + 1);
+        if (userPoint === 0) {
+          setUserHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+          ]);
+        }
+        if (userPoint === 1) {
+          setUserHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+          ]);
+        }
+        if (userPoint === 2) {
+          setUserHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+          ]);
+          setShowModal(true);
+        }
+      } else if (userChoice === computerChoice) {
+        setResult("**Tie**");
+      } else {
+        setResult("Computer Wins!");
+        setCompPoint(compPoint + 1);
+        if (compPoint === 0) {
+          setCompHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+          ]);
+        }
+        if (compPoint === 1) {
+          setCompHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/blue_head.webp" alt="blue head" />,
+          ]);
+        }
+        if (compPoint === 2) {
+          setCompHead([
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+            <img src="./media/red_head.webp" alt="red head" />,
+          ]);
+          setShowModal(true);
+        }
       }
-      if (userPoint === 1) {
-        setUserHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-        ]);
-      }
-      if (userPoint === 2) {
-        setUserHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-        ]);
-        setShowModal(true);
-      }
-    } else if (userChoice === computerChoice) {
-      setResult("**Tie**");
-    } else {
-      setResult("Computer Wins!");
-      setCompPoint(compPoint + 1);
-      if (compPoint === 0) {
-        setCompHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-        ]);
-      }
-      if (compPoint === 1) {
-        setCompHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/blue_head.webp" alt="blue head" />,
-        ]);
-      }
-      if (compPoint === 2) {
-        setCompHead([
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-          <img src="./media/red_head.webp" alt="red head" />,
-        ]);
-        setShowModal(true);
-      }
-    }
+    }, 2000);
   };
   const restartGame = () => {
     setUser(
