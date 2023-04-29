@@ -9,7 +9,8 @@ export default function Welcome() {
 
   const handleInput = (event) => {
     event.preventDefault();
-    setName(event.target.value);
+    const inputVal = event.target.value.slice(0, 9).split(" ").join(''); // limit to 9 characters
+    setName(inputVal);
     setError(false);
   };
 
