@@ -45,10 +45,13 @@ export default function Welcome() {
                 required
               />
             </label>
-            <button className="btn">
-              <span>Click!</span>
-              <span>Play</span>
-            </button>
+            <div className="btn-center">
+              <button className="btn">
+                <span>Click!</span>
+                <span>Play</span>
+              </button>
+            </div>
+
             {error && <p>Please Enter a Valid Name.</p>}
           </form>
         </div>
