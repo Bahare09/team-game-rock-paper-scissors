@@ -10,8 +10,9 @@ h1 {
   font-size: 35px;
   letter-spacing: 10px;
   color: var(--blue);
-  text-shadow: 0 0 2px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
-    0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+  -webkit-text-stroke: 1px #fff, 2px #228dff, 3px #228dff, 4px #228dff,
+    5px #228dff, 6px #228dff, 7px #228dff;
+  text-shadow: none;
 }
 
 #glow {
@@ -59,5 +60,11 @@ h1 {
 @media (min-width: 1024px) {
   #shadow {
     margin-top: 50px;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 10px;
+    color: var(--blue);
+    text-shadow: 0 0 2px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
+      0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
 }

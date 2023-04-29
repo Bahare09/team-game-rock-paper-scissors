@@ -76,6 +76,7 @@
   font-family: var(--p-font);
   background: linear-gradient(180deg, #88b5ef 0%, #cccccc 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 30px;
   text-align: center;
@@ -153,7 +154,7 @@
 }
 
 .scoreboard {
-  width: 180px;
+  width: 200px;
   height: 190px;
   border: 8px solid #88b5ef;
   border-top: 50px solid #88b5ef;
