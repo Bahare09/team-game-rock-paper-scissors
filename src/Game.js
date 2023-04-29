@@ -244,14 +244,17 @@ function Game() {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="btn name_btn"
-          onClick={handleAnotherNameClick}
-        >
-          <span>Click!</span>
-          <span>Another name?</span>
-        </button>
+        <div className="btn-center">
+          <button
+            type="button"
+            className="btn name_btn"
+            onClick={handleAnotherNameClick}
+          >
+            <span>Click!</span>
+            <span>Another name?</span>
+          </button>
+        </div>
+
         {showModal && (
           <div className="modal">
             <div className="modal-content">
@@ -263,10 +266,12 @@ function Game() {
                 <h2>Game Over!</h2>
               )}
             </div>
-            <button className="btn btn-modal" onClick={restartGame}>
-              <span>Click!</span>
-              <span>Restart</span>
-            </button>
+            <div className="btn-center">
+              <button className="btn btn-modal" onClick={restartGame}>
+                <span>Click!</span>
+                <span>Restart</span>
+              </button>
+            </div>
           </div>
         )}
       </div>

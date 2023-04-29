@@ -65,6 +65,13 @@ p {
   margin-bottom: 50px !important;
 }
 
+.btn-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15px;
+}
+
 @media (min-width: 480px) {
   .modal {
     height: 250px;
