@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Rock-Paper-Scissors Game (by CYF London9 Trainees)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-## Available Scripts
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 
-In the project directory, you can run:
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-### `npm start`
+This is a creative representation of the well-known Rock-Paper-Scissors Game implemented using React.js.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deployed Website
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can access the application at the following address: <a href="https://rock-paper-scissors-team.netlify.app/">Click me</a>
 
-### `npm test`
+## Game Rules
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The game has 2 players: Computer and User.
+- The User has 3 options to choose: Rock, Paper, Scissors
+- The Main Rules:
+-        --> A Rock beats Scissors
+-        --> Scissors beat Paper by cutting it
+-        --> Paper beats Rock by covering it
+- There are 3 options at the end of a Round: User Wins, Computer Wins or Tie.
+- The Game ends when a player wins 3 Rounds.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Passing the name as a Player against the Computer which enhances User Experience.
+- [x] Passing the name as a Player against the Computer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Clone the repository:**
 
-### `npm run eject`
+```bash
+git clone https://github.com/yourusername/your-website.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Install dependencies:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Start the development server:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+## Contributors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+     <td align="center" valign="top" width="14.28%"><a href="https://github.com/Bahare09"><img src="https://avatars.githubusercontent.com/u/108987748?v=4" width="100px;" alt="Bahare"/><br /><sub><b>Bahare</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=Bahare09" title="Code">📆</a></td>
+       <td align="center" valign="top" width="14.28%"><a href="https://github.com/VitalinaKuzmenko"><img src="https://avatars.githubusercontent.com/u/91835307?v=4" width="100px;" alt="Vitalina"/><br /><sub><b>Vitalina</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=VitalinaKuzmenko" title="Code">💻</a> </td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LorenaCapraru"><img src="https://avatars.githubusercontent.com/u/108892538?v=4" width="100px;" alt="Lorena"/><br /><sub><b>Lorena</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=LorenaCapraru" title="Code">💻</a></td>
+       </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://shayanmahnam.netlify.app"><img src="https://avatars.githubusercontent.com/u/95313895?v=4?s=100" width="100px;" alt="Shayan Mahnam"/><br /><sub><b>Shayan Mahnam</b></sub></a><br /><a href="#projectManagement-ShayanMahnam" title="FrontEnd">💻</a></td>
+        <td align="center" valign="top" width="14.28%"><a href="https://github.com/laxmikckarki"><img src="https://avatars.githubusercontent.com/u/108900563?v=4" width="100px;" alt="Laxmi"/><br /><sub><b>Laxmi</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=laxmikckarki" title="Code">💻</a></td>
+        <td align="center" valign="top" width="14.28%"><a href="https://github.com/Tony-devops"><img src="https://avatars.githubusercontent.com/u/111275895?v=4" width="100px;" alt="Tony"/><br /><sub><b>Tony</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=Tony-devops" title="Code">💻</a> </td>
+        </tr>
+  </tbody>
+</table>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-### Code Splitting
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+<!-- markdownlint-disable -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ALL-CONTRIBUTORS-LIST:END -->
