@@ -13,10 +13,9 @@ This is a creative representation of the well-known Rock-Paper-Scissors Game imp
 You can access the application at the following address: <a href="https://rock-paper-scissors-team.netlify.app/">Click me</a>
 
 ## Game Rules
-
 - The game has 2 players: Computer and User.
 - The User has 3 options to choose: Rock, Paper, Scissors
-- The Main Rules:
+- The Main Rules: 
 -        --> A Rock beats Scissors
 -        --> Scissors beat Paper by cutting it
 -        --> Paper beats Rock by covering it
@@ -24,9 +23,18 @@ You can access the application at the following address: <a href="https://rock-p
 - The Game ends when a player wins 3 Rounds.
 
 ## Features
-
 - [x] Passing the name as a Player against the Computer which enhances User Experience.
-- [x] Passing the name as a Player against the Computer.
+- [x] The application requires the <b>user's name</b> to enhance user experience.
+- [x] The application provides user with 3 options: <b>Rock, Paper, Scissors</b>
+- [x] The application enbales the option to <b>Change the User Name</b>.
+- [x] The application provides the option to the restart the game at the end of it.
+- [x] The game starts only after the user inserts its name.
+
+## Technologies Used:
+- [x] JavaScript Frameworks: React
+- [x] CSS, HTML
+- [x] Font Scripts: Google Font API
+
 
 ## Installation
 
