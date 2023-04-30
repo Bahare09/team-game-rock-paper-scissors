@@ -41,7 +41,7 @@ You can access the application at the following address: <a href="https://rock-p
 **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/your-website.git
+git clone github.com/Bahare09/team-game-rock-paper-scissors.git
 ```
 
 **Install dependencies:**
