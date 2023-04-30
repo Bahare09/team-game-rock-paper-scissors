@@ -5,6 +5,13 @@
   text-align: center;
   color: var(--blue);
 }
+.main-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 
 img {
   height: 60vh;
