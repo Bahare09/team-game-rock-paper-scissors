@@ -1,5 +1,7 @@
 /* design animation for title */
-
+.nav{
+  text-decoration: none;
+}
 h1 {
   padding: 0 20px;
 }

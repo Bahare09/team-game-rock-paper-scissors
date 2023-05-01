@@ -7,6 +7,7 @@ import Header from "./Header";
 import mySong from "./assets/xray.mp3";
 import SoundOff from "./assets/sound-off.svg";
 import SoundOn from "./assets/sound-loud.svg";
+import NoMatch from "./NoMatch";
 
 function App() {
   const [isMuted, setIsMuted] = useState(false);
@@ -49,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/game" element={<Game />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </Router>
     </div>
