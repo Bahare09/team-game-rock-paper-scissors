@@ -4,7 +4,7 @@ import Welcome from "./Welcome";
 import Game from "./Game";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Header";
-import mySong from "./assets/xray.mp3";
+import mySong from "./assets/Mystical_music.mp3";
 import SoundOff from "./assets/sound-off.svg";
 import SoundOn from "./assets/sound-loud.svg";
 import NoMatch from "./NoMatch";
@@ -28,11 +28,11 @@ function App() {
   }, [audio]);
 
   const toggleMute = () => {
-    if (isMuted) {
-      audio.volume = 0.25;
+    if (audio.muted) {
+      audio.muted = false;
       setIsMuted(false);
     } else {
-      audio.volume = 0;
+      audio.muted = true;
       setIsMuted(true);
     }
   };
