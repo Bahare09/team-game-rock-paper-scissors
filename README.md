@@ -23,7 +23,6 @@ You can access the application at the following address: <a href="https://rock-p
 - The Game ends when a player wins 3 Rounds.
 
 ## Features
-- [x] Passing the name as a Player against the Computer which enhances User Experience.
 - [x] The application requires the <b>user's name</b> to enhance user experience.
 - [x] The application provides user with 3 options: <b>Rock, Paper, Scissors</b>
 - [x] The application enbales the option to <b>Change the User Name</b>.
