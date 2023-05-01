@@ -1,5 +1,5 @@
 /* design animation for title */
-.nav{
+.nav {
   text-decoration: none;
 }
 h1 {
@@ -9,12 +9,15 @@ h1 {
 #shadow {
   margin: 30px 0;
   text-align: center;
-  font-size: 35px;
+  font-size: 30px;
   letter-spacing: 10px;
   color: var(--blue);
-  -webkit-text-stroke: 1px #fff, 2px #228dff, 3px #228dff, 4px #228dff,
-    5px #228dff, 6px #228dff, 7px #228dff;
-  text-shadow: none;
+  text-shadow: 0 0 2px #fff, 0 0 0px #fff, 0 0 1px #228dff, 0 0 30px #228dff,
+    0 0 0px #228dff, 0 0 0px #228dff, 0 0 30px #228dff;
+}
+
+#shadow span {
+  padding: 20px;
 }
 
 #glow {
