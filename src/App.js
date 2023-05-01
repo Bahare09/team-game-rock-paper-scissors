@@ -15,7 +15,12 @@ function App() {
   useEffect(() => {
     audio.volume = 0.25;
     audio.loop = true;
-    audio.play();
+
+    // Play audio when the user interacts with the page
+    document.addEventListener("click", () => {
+      audio.play();
+    });
+
     return () => {
       audio.pause();
     };
