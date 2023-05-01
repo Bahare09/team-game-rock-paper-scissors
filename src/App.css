@@ -24,6 +24,33 @@ p {
   font-family: var(--p-font);
 }
 
+.sound-icon {
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.shadow{
+margin: 30px 0;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 10px;
+  color: var(--blue);
+  -webkit-text-stroke: 1px #fff, 2px #228dff, 3px #228dff, 4px #228dff,
+    5px #228dff, 6px #228dff, 7px #228dff;
+  text-shadow: none;
+}
+
+.glow {
+  animation: neon1 linear infinite 2s;
+  will-change: opacity;
+}
+
+.blink{
+animation: blink linear infinite 2s;
+}
 .modal {
   width: 80%;
   height: 200px;
@@ -90,6 +117,13 @@ p {
   .modal-content {
     font-size: 35px;
   }
+  .sound-icon {
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+}
 }
 
 @media (min-width: 1024px) {
