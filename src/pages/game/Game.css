@@ -84,63 +84,6 @@
   grid-area: text;
 }
 
-/* buttons */
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-area: buttons;
-}
-
-.custom-btn {
-  width: 150px;
-  height: 44px;
-  padding: 10px 28px;
-  font-family: var(--p-font);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-
-.button {
-  color: #bb0b01;
-  box-shadow: 0 0 5px #bb0b01, 0 0 5px #d60800 inset;
-  border: 1px solid #bb0b01;
-  z-index: 1;
-  font-size: 20px;
-  margin: 10px auto;
-}
-
-.button:not(:disabled) {
-  color: #88b5ef;
-  box-shadow: 0 0 5px #88b5ef, 0 0 5px #0bf4f3 inset;
-  border: 1px solid #88b5ef;
-  z-index: 1;
-  font-size: 20px;
-  margin: 10px auto;
-}
-
-.button:after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  box-shadow: 0 0 5px #88b5ef, 0 0 5px #88b5ef inset;
-  transition: all 0.3s ease;
-}
-
-.button:not(:disabled):hover:after {
-  top: 0;
-  height: 100%;
-}
-
 /* scoreboards */
 .scoreboards_buttons {
   display: grid;

@@ -6,7 +6,7 @@ const SocketContext = createContext();
 
 const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState({});
-  const [room, setRoom] = useState({});
+  const [game, setGame] = useState({});
   const [player_1, setPlayer_1] = useState("");
   const [player_2, setPlayer_2] = useState("");
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ const SocketContextProvider = ({ children }) => {
     const socket = io("https://test-socket-server.glitch.me/");
     setSocket(socket);
 
-    socket.on("room:get", (payload) => {
-      setRoom(payload);
+    socket.on("game:get", (payload) => {
+      setGame(payload);
       let play_1 = Object.keys(payload.players)[0];
       let play_2 = Object.keys(payload.players)[1];
 
@@ -44,8 +44,8 @@ const SocketContextProvider = ({ children }) => {
     <SocketContext.Provider
       value={{
         socket,
-        room,
-        setRoom,
+        game,
+        setGame,
         player_1,
         player_2,
         navigate,

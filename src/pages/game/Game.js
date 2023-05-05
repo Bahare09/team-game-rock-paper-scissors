@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState, useContext } from "react";
+import { SocketContext } from "../../context/SocketContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../../App.css";
 import "./Game.css";
 import LostSong from "../../assets/evil-laugh.mp3";
+import Controls from "../../components/controls/Controls";
 
 function Game() {
   //to import the useState name from Welcome Page
@@ -225,18 +227,7 @@ function Game() {
         </div>
 
         <div className="scoreboards_buttons">
-          <div className="buttons">
-            {choices.map((choice, index) => (
-              <button
-                className="custom-btn button"
-                key={index}
-                onClick={() => handleClick(choice)}
-                disabled={buttonsDisabled}
-              >
-                {choice.name}
-              </button>
-            ))}
-          </div>
+          <Controls choices={choices} />
 
           <div className="scoreboard scoreboard_1">
             <h1 className="board-text">{location.state.name}</h1>

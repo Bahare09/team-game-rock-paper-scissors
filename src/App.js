@@ -48,7 +48,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="/game/:id" element={<Game />} />
+        <Route path="/game" element={<Game />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

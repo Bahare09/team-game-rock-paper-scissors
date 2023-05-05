@@ -5,9 +5,13 @@ const WelcomeButton = ({ name, type, userName }) => {
   const { socket, navigate } = useContext(SocketContext);
 
   const handleChange = (type) => {
-    socket.emit("game:create", { type }, (err, roomId) => {
-      navigate(`/game/${roomId}`);
-    });
+    if (type === "computer") {
+      navigate("/game", { state: { name: formatString(userName) } });
+    } else {
+      socket.emit("game:create", { type }, (err, roomId) => {
+        navigate(`/game/${roomId}`);
+      });
+    }
   };
 
   //formatting the name, so it is without space, with first capital letter
