@@ -140,15 +140,6 @@
   margin: 30px auto;
 }
 
-.comp-btn:disabled {
-  color: #bb0b01;
-  box-shadow: 0 0 5px #bb0b01, 0 0 5px #d60800 inset;
-  border: 1px solid #bb0b01;
-  z-index: 1;
-  font-size: 20px;
-  margin: 10px auto;
-}
-
 @media (min-width: 468px) {
   .scoreboards_buttons {
     grid-template-columns: repeat(2, 1fr);

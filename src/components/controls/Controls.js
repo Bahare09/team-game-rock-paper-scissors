@@ -2,42 +2,63 @@ import { useState, useContext, useEffect } from "react";
 import { SocketContext } from "../../context/SocketContext";
 import "./Controls.css";
 
-const Controls = ({ choices }) => {
+const Controls = () => {
   const [option, setOption] = useState("");
-  const { socket, game } = useContext(SocketContext);
+  const { socket, room } = useContext(SocketContext);
 
   useEffect(() => {
-    if (game.players[socket.id].optionLock) {
-      setOption(game.players[socket.id].option);
+    if (room.players[socket.id].optionLock) {
+      setOption(room.players[socket.id].option);
     } else {
       setOption("");
     }
-  }, [game]);
+  }, [room]);
 
   const handleChange = ({ currentTarget: input }) => {
     setOption(input.value);
-    game.players[socket.id].option = input.value;
-    game.players[socket.id].optionLock = true;
-    socket.emit("game:update", game);
+    room.players[socket.id].option = input.value;
+    room.players[socket.id].optionLock = true;
+    socket.emit("room:update", room);
   };
 
   return (
     <div className="buttons">
-      {choices.map((choice, index) => (
-        <button
-          className={
-            option.length > 0
-              ? "custom-btn button active_btn"
-              : "custom-btn button"
-          }
-          key={index}
-          disabled={game.players[socket.id].optionLock}
-          onClick={handleChange}
-          value={choice.name}
-        >
-          {choice.name}
-        </button>
-      ))}
+      <button
+        className={
+          option === "Rock"
+            ? "custom-btn button active_btn"
+            : "custom-btn button"
+        }
+        disabled={room.players[socket.id].optionLock}
+        onClick={handleChange}
+        value="Rock"
+      >
+        Rock
+      </button>
+      <button
+        className={
+          option === "Paper"
+            ? "custom-btn button active_btn"
+            : "custom-btn button"
+        }
+        disabled={room.players[socket.id].optionLock}
+        onClick={handleChange}
+        value="Paper"
+      >
+        Paper
+      </button>
+      <button
+        className={
+          option === "Scissors"
+            ? "custom-btn button active_btn"
+            : "custom-btn button"
+        }
+        disabled={room.players[socket.id].optionLock}
+        onClick={handleChange}
+        value="Scissors"
+      >
+        Scissors
+      </button>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Welcome from "./pages/welcome/Welcome";
 import Game from "./pages/game/Game";
+import Room from "./pages/room/Room";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import mySong from "./assets/Mystical_music.mp3";
@@ -49,6 +50,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/room/:id" element={<Room />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

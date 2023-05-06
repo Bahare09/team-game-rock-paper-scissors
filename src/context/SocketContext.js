@@ -6,7 +6,7 @@ const SocketContext = createContext();
 
 const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState({});
-  const [game, setGame] = useState({});
+  const [room, setRoom] = useState({});
   const [player_1, setPlayer_1] = useState("");
   const [player_2, setPlayer_2] = useState("");
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ const SocketContextProvider = ({ children }) => {
     const socket = io("https://test-socket-server.glitch.me/");
     setSocket(socket);
 
-    socket.on("game:get", (payload) => {
-      setGame(payload);
+    socket.on("room:get", (payload) => {
+      setRoom(payload);
       let play_1 = Object.keys(payload.players)[0];
       let play_2 = Object.keys(payload.players)[1];
 
@@ -29,13 +29,13 @@ const SocketContextProvider = ({ children }) => {
         setPlayer_2(play_1);
       }
 
-      if (
-        payload?.players[play_1]?.score === 3 ||
-        payload?.players[play_2]?.score === 3
-      ) {
-        let pathname = "/result";
-        if (pathname !== location.pathname) navigate(pathname);
-      }
+      // if (
+      //   payload?.players[play_1]?.score === 3 ||
+      //   payload?.players[play_2]?.score === 3
+      // ) {
+      //   let pathname = "/result";
+      //   if (pathname !== location.pathname) navigate(pathname);
+      // }
       console.log(payload.players);
     });
   }, []);
@@ -44,8 +44,8 @@ const SocketContextProvider = ({ children }) => {
     <SocketContext.Provider
       value={{
         socket,
-        game,
-        setGame,
+        room,
+        setRoom,
         player_1,
         player_2,
         navigate,

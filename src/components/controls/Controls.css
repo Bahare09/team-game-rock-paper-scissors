@@ -18,16 +18,13 @@
   text-align: center;
 }
 
-.button {
-  color: #bb0b01;
-  box-shadow: 0 0 5px #bb0b01, 0 0 5px #d60800 inset;
-  border: 1px solid #bb0b01;
-  z-index: 1;
-  font-size: 20px;
-  margin: 10px auto;
+.active_btn {
+  color: #bb0b01 !important;
+  box-shadow: 0 0 5px #bb0b01, 0 0 5px #d60800 inset !important;
+  border: 1px solid #bb0b01 !important;
 }
 
-.active_btn {
+.button {
   color: #88b5ef;
   box-shadow: 0 0 5px #88b5ef, 0 0 5px #0bf4f3 inset;
   border: 1px solid #88b5ef;

@@ -1,15 +1,19 @@
 import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
 
-const WelcomeButton = ({ name, type, userName }) => {
+const WelcomeButton = ({ name, type, userName, setError }) => {
   const { socket, navigate } = useContext(SocketContext);
 
   const handleChange = (type) => {
-    if (type === "computer") {
+    if (userName.trim() === "") {
+      setError(true);
+    } else if (type === "computer") {
       navigate("/game", { state: { name: formatString(userName) } });
     } else {
-      socket.emit("game:create", { type }, (err, roomId) => {
-        navigate(`/game/${roomId}`);
+      socket.emit("room:create", { type }, (err, roomId) => {
+        navigate(`/room/${roomId}`, {
+          state: { name: formatString(userName) },
+        });
       });
     }
   };
@@ -22,7 +26,7 @@ const WelcomeButton = ({ name, type, userName }) => {
 
   return (
     <div className="btn-center" onClick={() => handleChange(type)}>
-      <button className="btn">
+      <button className="btn" type="submit" value={name}>
         <span>Click!</span>
         <span>{name}</span>
       </button>
