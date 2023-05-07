@@ -3,7 +3,7 @@ import "./App.css";
 import Welcome from "./pages/welcome/Welcome";
 import Game from "./pages/game/Game";
 import Room from "./pages/room/Room";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import mySong from "./assets/Mystical_music.mp3";
 import SoundOff from "./assets/sound-off.svg";
