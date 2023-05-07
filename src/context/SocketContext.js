@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
 const SocketContext = createContext();
@@ -10,13 +10,13 @@ const SocketContextProvider = ({ children }) => {
   const [player_1, setPlayer_1] = useState("");
   const [player_2, setPlayer_2] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const socket = io("https://test-socket-server.glitch.me/");
     setSocket(socket);
 
     socket.on("room:get", (payload) => {
+      console.log(payload);
       setRoom(payload);
       let play_1 = Object.keys(payload.players)[0];
       let play_2 = Object.keys(payload.players)[1];
@@ -28,15 +28,6 @@ const SocketContextProvider = ({ children }) => {
         setPlayer_1(play_2);
         setPlayer_2(play_1);
       }
-
-      // if (
-      //   payload?.players[play_1]?.score === 3 ||
-      //   payload?.players[play_2]?.score === 3
-      // ) {
-      //   let pathname = "/result";
-      //   if (pathname !== location.pathname) navigate(pathname);
-      // }
-      console.log(payload.players);
     });
   }, []);
 

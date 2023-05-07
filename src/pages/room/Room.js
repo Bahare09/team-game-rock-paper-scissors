@@ -22,6 +22,19 @@ function Room() {
   const [animationClass, setAnimationClass] = useState("");
   const [updateScore, setUpdateScore] = useState(false);
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
+  const [name1, setName1] = useState("");
+  const [name2, setName2] = useState("");
+
+  //for updating name value
+  useEffect(() => {
+    const players = room?.players;
+    if (players && players[player_1] && players[player_1].name === "") {
+      players[player_1].name = location.state.name;
+    } else if (players && players[player_2] && players[player_2].name === "") {
+      players[player_2].name = location.state.name;
+    }
+    socket.emit("room:update", room);
+  }, []);
 
   //for disabling buttons when after the pop up window
   useEffect(() => {

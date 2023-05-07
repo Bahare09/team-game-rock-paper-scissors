@@ -5,7 +5,7 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
   const { socket, navigate } = useContext(SocketContext);
   const [activeButtons, setActiveButtons] = useState(false);
   const [activeRoom, setActiveRoom] = useState(false);
-  const [room, setRoom] = useState("");
+  const [roomName, setRoomName] = useState("");
   const [error2, setError2] = useState(false);
 
   const handleChange = (type) => {
@@ -32,9 +32,7 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
 
   const handleCreateRoom = () => {
     socket.emit("room:create", { type }, (err, roomId) => {
-      navigate(`/room/${roomId}`, {
-        state: { name: formatString(userName) },
-      });
+      navigate(`/room/${roomId}`, { state: { name: formatString(userName) } });
     });
     setActiveButtons(false);
   };
@@ -42,7 +40,7 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
   const handleRoomChange = (event) => {
     event.preventDefault();
     const inputVal = event.target.value.slice(0, 9).split(" ").join(""); // limit to 9 characters
-    setRoom(inputVal);
+    setRoomName(inputVal);
     setError2(false);
   };
 
@@ -52,9 +50,9 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
   };
 
   const joinRoom = () => {
-    const formattedRoom = formatString(room);
+    const formattedRoom = formatString(roomName);
     if (formattedRoom !== "") {
-      navigate(`/room/${room}`, {
+      navigate(`/room/${roomName}`, {
         state: { name: formatString(userName) },
       });
       setActiveRoom(false);
@@ -86,7 +84,7 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
             <input
               className="input-name"
               type="text"
-              value={room}
+              value={roomName}
               onChange={handleRoomChange}
               required
             />
