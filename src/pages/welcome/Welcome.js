@@ -46,14 +46,14 @@ export default function Welcome() {
                 setError={setError}
               />
               <WelcomeButton
-                name="Play with Friend"
-                type="friend"
+                name="Play with Stranger"
+                type="stranger"
                 userName={userName}
                 setError={setError}
               />
               <WelcomeButton
-                name="Play with Stranger"
-                type="stranger"
+                name="Play with Friend"
+                type="friend"
                 userName={userName}
                 setError={setError}
               />

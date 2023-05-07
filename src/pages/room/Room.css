@@ -21,7 +21,8 @@
 
 .waiting_container {
   text-align: center;
-  width: 50%;
+  grid-area: right_hand;
+  margin: 0 5px;
 }
 
 /* animations for hands */

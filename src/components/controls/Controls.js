@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { SocketContext } from "../../context/SocketContext";
 import "./Controls.css";
 
-const Controls = () => {
+const Controls = ({ buttonsDisabled }) => {
   const [option, setOption] = useState("");
   const { socket, room } = useContext(SocketContext);
 
@@ -29,7 +29,7 @@ const Controls = () => {
             ? "custom-btn button active_btn"
             : "custom-btn button"
         }
-        disabled={room.players[socket.id].optionLock}
+        disabled={!buttonsDisabled ? room.players[socket.id].optionLock : true}
         onClick={handleChange}
         value="Rock"
       >
@@ -41,7 +41,7 @@ const Controls = () => {
             ? "custom-btn button active_btn"
             : "custom-btn button"
         }
-        disabled={room.players[socket.id].optionLock}
+        disabled={!buttonsDisabled ? room.players[socket.id].optionLock : true}
         onClick={handleChange}
         value="Paper"
       >
@@ -53,7 +53,7 @@ const Controls = () => {
             ? "custom-btn button active_btn"
             : "custom-btn button"
         }
-        disabled={room.players[socket.id].optionLock}
+        disabled={!buttonsDisabled ? room.players[socket.id].optionLock : true}
         onClick={handleChange}
         value="Scissors"
       >

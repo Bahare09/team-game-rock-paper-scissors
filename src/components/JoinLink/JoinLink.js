@@ -20,7 +20,7 @@ const JoinLink = ({ link }) => {
       >
         {link}
       </button>
-      <p>Send this link to your friend to connect.</p>
+      <p>Send this room to your friend to connect.</p>
     </div>
   );
 };

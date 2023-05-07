@@ -6,8 +6,6 @@ import "./Room.css";
 import JoinLink from "../../components/JoinLink/JoinLink";
 import LostSong from "../../assets/evil-laugh.mp3";
 import Controls from "../../components/controls/Controls";
-import Blue_head from "../../assets/media/blue_head.webp";
-import Red_head from "../../assets/media/red_head.webp";
 import PlayerOne from "../../components/PlayerOne/PlayerOne";
 import PlayerTwo from "../../components/PlayerTwo/PlayerTwo";
 import Hand_Image_1 from "../../components/Hand_Images/Hand_Image_1.js";
@@ -23,6 +21,16 @@ function Room() {
   const [showModal, setShowModal] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
   const [updateScore, setUpdateScore] = useState(false);
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
+
+  //for disabling buttons when after the pop up window
+  useEffect(() => {
+    if (showModal) {
+      setButtonsDisabled(true);
+    } else {
+      setButtonsDisabled(false);
+    }
+  }, [showModal]);
 
   useEffect(() => {
     let roomId = location.pathname.split("/")[2];
@@ -125,6 +133,7 @@ function Room() {
 
   const restartGame = () => {
     navigate("/");
+    setButtonsDisabled(false);
   };
 
   return (
@@ -135,7 +144,7 @@ function Room() {
           <h1 className="result">{resultText}</h1>
           <div className="waiting_container">
             {!player_2 && room.type === "friend" && (
-              <JoinLink link={`http://localhost:3000/room/${room.roomId}`} />
+              <JoinLink link={`${room.roomId}`} />
             )}
             {!player_2 && <p>waiting for opponent connection...</p>}
           </div>
@@ -146,7 +155,7 @@ function Room() {
         </div>
 
         <div className="scoreboards_buttons">
-          {player_2 && <Controls />}
+          {player_2 && <Controls buttonsDisabled={buttonsDisabled} />}
           <PlayerOne updateScore={updateScore} />
           <PlayerTwo updateScore={updateScore} />
         </div>
@@ -170,7 +179,7 @@ function Room() {
               ) : resultText === "Computer Wins!" ? (
                 <h2>Oops! Computer Wins!</h2>
               ) : (
-                <h2>Game Over! You lost!</h2>
+                <h2>Game Over! You lose!</h2>
               )}
             </div>
             <div className="btn-center">
