@@ -8,7 +8,7 @@
 
 This is a creative representation of the well-known Rock-Paper-Scissors Game implemented using React.js.
 
-## Deployed Website
+## Deployed Website https://rps-game-vitalina-test-multiplayer.netlify.app/
 
 You can access the application at the following address: <a href="https://rock-paper-scissors-team.netlify.app/">Click me</a>
 
