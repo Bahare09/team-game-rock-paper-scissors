@@ -11,6 +11,7 @@ const PlayerOne = ({ updateScore }) => {
     if (updateScore) {
       setScore(room.players[player_1].score);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateScore]);
 
   return (

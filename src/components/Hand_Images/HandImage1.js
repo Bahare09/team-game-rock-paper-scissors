@@ -2,7 +2,7 @@ import Left_Rock from "../../assets/media/left_rock.webp";
 import Left_Paper from "../../assets/media/left_paper.webp";
 import Left_Scissors from "../../assets/media/left_scissors.webp";
 
-const Hand_Image_1 = ({ option, animationClass }) => {
+const HandImage1 = ({ option, animationClass }) => {
   return (
     <>
       {option === "Rock" && (
@@ -30,4 +30,4 @@ const Hand_Image_1 = ({ option, animationClass }) => {
   );
 };
 
-export default Hand_Image_1;
+export default HandImage1;

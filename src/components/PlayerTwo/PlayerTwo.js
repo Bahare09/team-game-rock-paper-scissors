@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
 import Blue_head from "../../assets/media/blue_head.webp";

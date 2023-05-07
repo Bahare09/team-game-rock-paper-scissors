@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useContext, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { SocketContext } from "../../context/SocketContext";
@@ -8,8 +9,8 @@ import LostSong from "../../assets/evil-laugh.mp3";
 import Controls from "../../components/controls/Controls";
 import PlayerOne from "../../components/PlayerOne/PlayerOne";
 import PlayerTwo from "../../components/PlayerTwo/PlayerTwo";
-import Hand_Image_1 from "../../components/Hand_Images/Hand_Image_1.js";
-import Hand_Image_2 from "../../components/Hand_Images/Hand_Image_2.js";
+import HandImage1 from "../../components/Hand_Images/HandImage1.js";
+import HandImage2 from "../../components/Hand_Images/HandImage2.js";
 
 function Room() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function Room() {
   const [animationClass, setAnimationClass] = useState("");
   const [updateScore, setUpdateScore] = useState(false);
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
+  const [audio] = useState(new Audio(LostSong));
 
   //for updating name value
   useEffect(() => {
@@ -85,6 +87,13 @@ function Room() {
           room.players[player_2].score === 3
         ) {
           setShowModal(true);
+        }
+
+        if (room.players[player_1].score === 3) {
+          audio.play();
+        }
+        if (room.players[player_2].score === 3) {
+          audio.play();
         }
 
         socket.emit("room:update", room);
@@ -151,7 +160,7 @@ function Room() {
     <div className="home">
       <div className="game_container">
         <div className="hands_container">
-          <Hand_Image_1 option={user} animationClass={animationClass} />
+          <HandImage1 option={user} animationClass={animationClass} />
           <h1 className="result">{resultText}</h1>
           <div className="waiting_container">
             {!player_2 && room.type === "friend" && (
@@ -161,7 +170,7 @@ function Room() {
           </div>
 
           {player_2 && (
-            <Hand_Image_2 option={computer} animationClass={animationClass} />
+            <HandImage2 option={computer} animationClass={animationClass} />
           )}
         </div>
 
