@@ -87,13 +87,12 @@ function Room() {
           room.players[player_2].score === 3
         ) {
           setShowModal(true);
-        }
-
-        if (room.players[player_1].score === 3) {
-          audio.play();
-        }
-        if (room.players[player_2].score === 3) {
-          audio.play();
+          if (room.players[player_1].score !== 3) {
+            audio.play();
+          }
+          if (room.players[player_2].score !== 3) {
+            audio.play();
+          }
         }
 
         socket.emit("room:update", room);
