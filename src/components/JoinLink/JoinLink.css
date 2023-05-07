@@ -1,0 +1,28 @@
+.link_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.copy_text {
+  font-size: 18px;
+  font-family: var(--p-font);
+  margin-bottom: 5px;
+}
+
+.link-btn {
+  font-size: 10px;
+  font-family: var(--p-font);
+  padding: 5px 0;
+  border: 2px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+.link-btn-active {
+  background: var(--blue) !important;
+  color: white !important;
+}

@@ -133,12 +133,13 @@ function Room() {
         <div className="hands_container">
           <Hand_Image_1 option={user} animationClass={animationClass} />
           <h1 className="result">{resultText}</h1>
-          {!player_2 && room.type === "friend" && (
-            <JoinLink
-              link={`${process.env.REACT_APP_BASE_URL}room/${room.roomId}`}
-            />
-          )}
-          {!player_2 && <p>waiting for opponent connection...</p>}
+          <div className="waiting_container">
+            {!player_2 && room.type === "friend" && (
+              <JoinLink link={`http://localhost:3000/room/${room.roomId}`} />
+            )}
+            {!player_2 && <p>waiting for opponent connection...</p>}
+          </div>
+
           {player_2 && (
             <Hand_Image_2 option={computer} animationClass={animationClass} />
           )}

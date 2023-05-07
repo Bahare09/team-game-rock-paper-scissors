@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./JoinLink.css";
 
 const JoinLink = ({ link }) => {
   const [active, setActive] = useState(false);
@@ -9,21 +10,17 @@ const JoinLink = ({ link }) => {
   };
 
   return (
-    <div>
-      <div onClick={handleChange}>
+    <div className="link_container">
+      <div onClick={handleChange} className="copy_text">
         {active ? "Copied !" : "Click to copy !"}
       </div>
       <button
-        // className={
-        //   active
-        //     ? `${styles.join_link} ${styles.join_link_active}`
-        //     : styles.join_link
-        // }
+        className={active ? `link-btn link-btn-active` : "link-btn"}
         onClick={handleChange}
       >
         {link}
       </button>
-      <h2>Send this link to your friend to connect.</h2>
+      <p>Send this link to your friend to connect.</p>
     </div>
   );
 };

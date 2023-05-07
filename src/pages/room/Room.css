@@ -19,6 +19,11 @@
   height: auto;
 }
 
+.waiting_container {
+  text-align: center;
+  width: 50%;
+}
+
 /* animations for hands */
 .up-down {
   animation-name: hand-bounce;
