@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useContext, useEffect } from "react";
 import { SocketContext } from "../../context/SocketContext";
 import "./Controls.css";
