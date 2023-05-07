@@ -22,8 +22,6 @@ function Room() {
   const [animationClass, setAnimationClass] = useState("");
   const [updateScore, setUpdateScore] = useState(false);
   const [buttonsDisabled, setButtonsDisabled] = useState(false);
-  const [name1, setName1] = useState("");
-  const [name2, setName2] = useState("");
 
   //for updating name value
   useEffect(() => {

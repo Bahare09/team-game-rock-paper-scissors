@@ -10,18 +10,16 @@ const PlayerOne = ({ updateScore }) => {
   useEffect(() => {
     if (updateScore) {
       setScore(room.players[player_1].score);
-      console.log("score of player one is: " + room.players[player_1].score);
     }
   }, [updateScore]);
 
   return (
     <>
       <div className="scoreboard scoreboard_1">
-        {/* <h1 className="board-text">You</h1> */}
         <h1 className="board-text">
           {room.players[player_1].name
             ? room.players[player_1].name
-            : "Player 2"}
+            : "Player 1"}
         </h1>
         <div className="head_group">
           {[...Array(3).keys()].map((ele, index) =>

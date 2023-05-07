@@ -14,12 +14,14 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
     } else if (type === "computer") {
       navigate("/game", { state: { name: formatString(userName) } });
     } else if (type === "stranger") {
+      console.log("stranger");
       socket.emit("room:create", { type }, (err, roomId) => {
         navigate(`/room/${roomId}`, {
           state: { name: formatString(userName) },
         });
       });
     } else if (type === "friend") {
+      console.log("friend");
       setActiveButtons(true);
     }
   };
@@ -52,9 +54,17 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
   const joinRoom = () => {
     const formattedRoom = formatString(roomName);
     if (formattedRoom !== "") {
-      navigate(`/room/${roomName}`, {
+      navigate(`/room/${formattedRoom}`, {
         state: { name: formatString(userName) },
       });
+
+      // socket.emit("room:create", { type }, (err, roomId) => {
+      //   roomId = formattedRoom;
+      //   navigate(`/room/${roomId}`, {
+      //     state: { name: formatString(userName) },
+      //   });
+      // });
+
       setActiveRoom(false);
     } else {
       setError2(true);
@@ -72,8 +82,12 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
       {activeButtons && (
         <div>
           <div>
-            <button onClick={handleCreateRoom}>Create room</button>
-            <button onClick={handleJoinRoom}>Join room</button>
+            <button type="submit" onClick={handleCreateRoom}>
+              Create room
+            </button>
+            <button type="submit" onClick={handleJoinRoom}>
+              Join room
+            </button>
           </div>
         </div>
       )}
@@ -90,7 +104,9 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
             />
           </label>
           {error2 && <p>Wrong room</p>}
-          <button onClick={joinRoom}>Join room</button>
+          <button type="submit" onClick={joinRoom}>
+            Join room
+          </button>
         </>
       )}
     </>

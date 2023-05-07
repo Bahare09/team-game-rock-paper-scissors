@@ -10,15 +10,12 @@ const PlayerTwo = ({ updateScore }) => {
   useEffect(() => {
     if (updateScore) {
       setScore(room.players[player_2].score);
-      console.log("score of player two is: " + score);
     }
   }, [updateScore]);
 
   return (
     <>
       <div className="scoreboard scoreboard_2">
-        {/* <h1 className="board-text">{location.state.name}</h1> */}
-        {/* <h1 className="board-text">Player 2</h1> */}
         <h1 className="board-text">
           {room.players[player_2] && room.players[player_2].name !== ""
             ? room.players[player_2].name
