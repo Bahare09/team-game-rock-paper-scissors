@@ -52,19 +52,12 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
   };
 
   const joinRoom = () => {
-    const formattedRoom = formatString(roomName);
-    if (formattedRoom !== "") {
-      navigate(`/room/${formattedRoom}`, {
-        state: { name: formatString(userName) },
+    if (roomName !== "") {
+      socket.emit("room:create", { type }, (err, roomId) => {
+        navigate(`/room/${roomName}`, {
+          state: { name: formatString(userName) },
+        });
       });
-
-      // socket.emit("room:create", { type }, (err, roomId) => {
-      //   roomId = formattedRoom;
-      //   navigate(`/room/${roomId}`, {
-      //     state: { name: formatString(userName) },
-      //   });
-      // });
-
       setActiveRoom(false);
     } else {
       setError2(true);

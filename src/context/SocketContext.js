@@ -12,7 +12,7 @@ const SocketContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const socket = io("https://test-socket-server.glitch.me/");
+    const socket = io("http://localhost:8080");
     setSocket(socket);
 
     socket.on("room:get", (payload) => {

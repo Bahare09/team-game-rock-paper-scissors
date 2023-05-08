@@ -31,6 +31,7 @@ function Room() {
     if (players && players[player_1] && players[player_1].name === "") {
       players[player_1].name = location.state.name;
     } else if (players && players[player_2] && players[player_2].name === "") {
+      console.log("players[player_2].name", players[player_2].name.vacant);
       players[player_2].name = location.state.name;
     }
     socket.emit("room:update", room);
