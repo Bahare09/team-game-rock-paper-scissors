@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./App.css";
+import "../../App.css";
 import "./Game.css";
-import LostSong from "./assets/evil-laugh.mp3" 
+import LostSong from "../../assets/evil-laugh.mp3";
 
 function Game() {
   //to import the useState name from Welcome Page
@@ -181,7 +181,7 @@ function Game() {
             <img key={1} src="./media/red_head.webp" alt="red head" />,
             <img key={2} src="./media/red_head.webp" alt="red head" />,
           ]);
-          audio.play()
+          audio.play();
           setShowModal(true);
         }
       }
@@ -228,7 +228,7 @@ function Game() {
           <div className="buttons">
             {choices.map((choice, index) => (
               <button
-                className="custom-btn button"
+                className="custom-btn button comp-btn"
                 key={index}
                 onClick={() => handleClick(choice)}
                 disabled={buttonsDisabled}
@@ -237,7 +237,6 @@ function Game() {
               </button>
             ))}
           </div>
-
           <div className="scoreboard scoreboard_1">
             <h1 className="board-text">{location.state.name}</h1>
             <div className="head_group">{userHead}</div>

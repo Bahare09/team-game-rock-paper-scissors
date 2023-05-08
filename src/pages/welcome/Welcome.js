@@ -1,31 +1,23 @@
 import { useState, React } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Welcome.css";
+import WelcomeButton from "../../components/WelcomeButton/WelcomeButton";
 
 export default function Welcome() {
-  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
   const [error, setError] = useState(false); // New error state
-  const navigate = useNavigate();
 
   const handleInput = (event) => {
     event.preventDefault();
-    const inputVal = event.target.value.slice(0, 9).split(" ").join(''); // limit to 9 characters
-    setName(inputVal);
+    const inputVal = event.target.value.slice(0, 9).split(" ").join(""); // limit to 9 characters
+    setUserName(inputVal);
     setError(false);
   };
 
-  //formatting the name, so it is without space, with first capital letter
-  const formatString = (str) => {
-    const trimmed = str.trim();
-    return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
-  };
-
-  //to pass the useState 'name' tp the navigate Page
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (name.trim() !== "") {
-      navigate("/game", { state: { name: formatString(name) } });
-    } else setError(true);
+    if (userName.trim() === "") {
+      setError(true);
+    }
   };
 
   return (
@@ -40,19 +32,32 @@ export default function Welcome() {
               <input
                 className="input-name"
                 type="text"
-                value={name}
+                value={userName}
                 onChange={handleInput}
                 required
               />
             </label>
-            <div className="btn-center">
-              <button className="btn">
-                <span>Click!</span>
-                <span>Play</span>
-              </button>
-            </div>
-
             {error && <p>Please Enter a Valid Name.</p>}
+            <div>
+              <WelcomeButton
+                name="Play with Computer"
+                type="computer"
+                userName={userName}
+                setError={setError}
+              />
+              <WelcomeButton
+                name="Play with Stranger"
+                type="stranger"
+                userName={userName}
+                setError={setError}
+              />
+              <WelcomeButton
+                name="Play with Friend"
+                type="friend"
+                userName={userName}
+                setError={setError}
+              />
+            </div>
           </form>
         </div>
         <img src="/media/right_skeleton.webp" alt="skeleton" />

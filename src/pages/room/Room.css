@@ -1,0 +1,195 @@
+.game_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hands_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "text text"
+    "left_hand right_hand";
+  justify-items: center;
+  padding: 0 0 20px 0;
+}
+
+.hands_container img {
+  width: 100%;
+  height: auto;
+}
+
+.waiting_container {
+  text-align: center;
+  grid-area: right_hand;
+  margin: 0 5px;
+}
+
+/* animations for hands */
+.up-down {
+  animation-name: hand-bounce;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+
+.scale {
+  animation-name: hand-scale;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+
+@keyframes hand-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hand-scale {
+  0% {
+    transform: scale(0.8);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hands_container .left_hand {
+  grid-area: left_hand;
+  justify-self: end;
+}
+
+.hands_container .right_hand {
+  grid-area: right_hand;
+  justify-self: start;
+}
+
+.result {
+  font-family: var(--p-font);
+  background: linear-gradient(180deg, #88b5ef 0%, #cccccc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  text-align: center;
+  padding: 0;
+  grid-area: text;
+}
+
+/* scoreboards */
+.scoreboards_buttons {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "buttons"
+    "score1"
+    "score2";
+  justify-items: center;
+}
+
+.scoreboard {
+  width: 200px;
+  height: 190px;
+  border: 8px solid #88b5ef;
+  border-top: 50px solid #88b5ef;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.board-text {
+  position: relative;
+  top: -65px;
+  color: black;
+  font-family: var(--p-font);
+  padding: 0 10px;
+}
+
+.scoreboard_1 {
+  grid-area: score1;
+}
+
+.scoreboard_2 {
+  grid-area: score2;
+}
+
+.head_group {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -180%);
+}
+
+.head_group img {
+  width: 40px;
+  height: auto;
+  padding: 5px;
+}
+
+.name_btn {
+  width: 250px;
+  margin: 30px auto;
+}
+
+@media (min-width: 468px) {
+  .scoreboards_buttons {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "buttons buttons"
+      "score1 score2";
+    justify-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .hands_container {
+    grid-template-columns: 1fr 220px 1fr;
+    grid-template-rows: repeat(1, auto);
+    grid-template-areas: "left_hand text right_hand";
+  }
+
+  .result {
+    font-size: 40px;
+    max-width: 300px;
+    align-self: center;
+  }
+
+  .scoreboards_buttons {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, auto);
+    grid-template-areas: "score1 buttons score2";
+  }
+
+  .scoreboard_1 {
+    justify-self: end;
+  }
+
+  .scoreboard_2 {
+    justify-self: start;
+  }
+
+  .scoreboard {
+    width: 220px;
+    height: 190px;
+  }
+
+  .head_group {
+    transform: translate(-35%, -180%);
+  }
+}

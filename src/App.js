@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Welcome from "./Welcome";
-import Game from "./Game";
+import Welcome from "./pages/welcome/Welcome";
+import Game from "./pages/game/Game";
+import Room from "./pages/room/Room";
+// eslint-disable-next-line no-unused-vars
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./Header";
+import Header from "./components/header/Header";
 import mySong from "./assets/Mystical_music.mp3";
 import SoundOff from "./assets/sound-off.svg";
 import SoundOn from "./assets/sound-loud.svg";
@@ -45,14 +47,13 @@ function App() {
         className="sound-icon shadow blink glow"
         onClick={toggleMute}
       />
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/game" element={<Game />} />
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
-      </Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/room/:id" element={<Room />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
     </div>
   );
 }
