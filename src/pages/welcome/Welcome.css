@@ -130,6 +130,12 @@ form .input-name {
   }
 }
 
+@media (min-width: 768px) {
+  .btn {
+  width: 350px;
+  height: 54px;
+}
+}
 @media (min-width: 1024px) {
   h1 span {
     font-size: 70px;
@@ -153,6 +159,5 @@ form .input-name {
 
   .btn {
     font-size: 30px;
-    width: 160px;
   }
 }

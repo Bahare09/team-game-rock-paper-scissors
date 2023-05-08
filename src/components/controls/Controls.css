@@ -6,7 +6,7 @@
 }
 
 .custom-btn {
-  width: 150px;
+  width: 100px;
   height: 44px;
   padding: 10px 28px;
   font-family: var(--p-font);
@@ -29,7 +29,7 @@
   box-shadow: 0 0 5px #88b5ef, 0 0 5px #0bf4f3 inset;
   border: 1px solid #88b5ef;
   z-index: 1;
-  font-size: 20px;
+  font-size: 10px;
   margin: 10px auto;
 }
 
@@ -48,4 +48,19 @@
 .button:not(:disabled):hover:after {
   top: 0;
   height: 100%;
+}
+
+.btn-div{
+  gap: 1rem;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .custom-btn {
+  width: 250px;
+  height: 54px;
+}
+.button {
+  font-size: 20px;
+}
 }

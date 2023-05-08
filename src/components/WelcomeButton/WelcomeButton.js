@@ -74,11 +74,19 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
       </div>
       {activeButtons && (
         <div>
-          <div>
-            <button type="submit" onClick={handleCreateRoom}>
+          <div className="btn-div">
+            <button
+              className="custom-btn button comp-btn"
+              type="submit"
+              onClick={handleCreateRoom}
+            >
               Create room
             </button>
-            <button type="submit" onClick={handleJoinRoom}>
+            <button
+              className="custom-btn button comp-btn"
+              type="submit"
+              onClick={handleJoinRoom}
+            >
               Join room
             </button>
           </div>
@@ -97,7 +105,11 @@ const WelcomeButton = ({ name, type, userName, setError }) => {
             />
           </label>
           {error2 && <p>Wrong room</p>}
-          <button type="submit" onClick={joinRoom}>
+          <button
+            className="custom-btn button comp-btn"
+            type="submit"
+            onClick={joinRoom}
+          >
             Join room
           </button>
         </>
