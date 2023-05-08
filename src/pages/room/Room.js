@@ -83,15 +83,16 @@ function Room() {
         room.players[player_1].optionLock = false;
         room.players[player_2].optionLock = false;
 
-        if (
-          room.players[player_1].score === 3 ||
-          room.players[player_2].score === 3
-        ) {
+        let losingPlayerID;
+        if (room.players[player_1].score === 3) {
+          losingPlayerID = player_2;
+        } else if (room.players[player_2].score === 3) {
+          losingPlayerID = player_1;
+        }
+
+        if (losingPlayerID) {
           setShowModal(true);
-          if (room.players[player_1].score !== 3) {
-            audio.play();
-          }
-          if (room.players[player_2].score !== 3) {
+          if (losingPlayerID === player_1) {
             audio.play();
           }
         }
