@@ -28,10 +28,6 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 - There are 3 options at the end of a Round: User Wins, Computer Wins or Tie.
 - The Game ends when a player wins 3 Rounds.
 
-## Flow Chart
-
-<img src="Flowchart.jpg" alt='flowchart'/>
-
 ## Features
 
 - [x] The game establishes 2 options based on number of participants:
@@ -43,6 +39,10 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 - [x] The application provides the option to the restart the game at the end of it.
 - [x] The game starts only after the user inserts its name.
 
+## Flow Chart
+
+<img src="Flowchart.jpg" alt='flowchart'/>
+
 ## Technologies Used:
 
 - [x] JavaScript Frameworks: React
@@ -50,6 +50,16 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 - [x] Socket.io
 - [x] CSS, HTML
 - [x] Font Scripts: Google Font API
+
+## Pie Chart Of Technologies
+
+```mermaid
+pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150
+```
 
 ## Installation
 
