@@ -55,10 +55,10 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 
 ```mermaid
 pie
-    title Pie Chart
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 150
+    title Languages Used
+    "JavaScript" : 67%
+    "CSS" : 31.3%
+    "HTML" : 1.7%
 ```
 
 ## Installation
