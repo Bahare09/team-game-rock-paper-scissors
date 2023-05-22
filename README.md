@@ -41,6 +41,8 @@ You can access the application at the following address: <a href="https://rock-p
 
 ## Technologies Used:
 
+- [x] Socket.io
+- [x] JavaScript Frameworks: React
 - [x] JavaScript Frameworks: React
 - [x] CSS, HTML
 - [x] Font Scripts: Google Font API
