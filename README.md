@@ -10,7 +10,7 @@ This is a creative representation of the well-known Rock-Paper-Scissors Game imp
 
 ## Deployed Website
 
-You can access the application at the following address: <a href="https://rock-paper-scissors-team.netlify.app/">Click me</a>
+Access the deployed version of the application: <a href="https://rock-paper-scissors-team.netlify.app/">rock-paper-scissors-team.netlify.app</a>
 
 ## Game Rules
 
@@ -41,9 +41,9 @@ You can access the application at the following address: <a href="https://rock-p
 
 ## Technologies Used:
 
+- [x] JavaScript Frameworks: React
+- [x] Node.js
 - [x] Socket.io
-- [x] JavaScript Frameworks: React
-- [x] JavaScript Frameworks: React
 - [x] CSS, HTML
 - [x] Font Scripts: Google Font API
 
@@ -75,12 +75,12 @@ npm start
 <table>
   <tbody>
     <tr>
-     <td align="center" valign="top" width="14.28%"><a href="https://github.com/Bahare09"><img src="https://avatars.githubusercontent.com/u/108987748?v=4" width="100px;" alt="Bahare"/><br /><sub><b>Bahare</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=Bahare09" title="Code">📆</a></td>
+     <td align="center" valign="top" width="14.28%"><a href="https://shayanmahnam.netlify.app"><img src="https://avatars.githubusercontent.com/u/95313895?v=4?s=100" width="100px;" alt="Shayan Mahnam"/><br /><sub><b>Shayan Mahnam</b></sub></a><br /><a href="#projectManagement-ShayanMahnam" title="FrontEnd">💻</a></td>
        <td align="center" valign="top" width="14.28%"><a href="https://github.com/VitalinaKuzmenko"><img src="https://avatars.githubusercontent.com/u/91835307?v=4" width="100px;" alt="Vitalina"/><br /><sub><b>Vitalina</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=VitalinaKuzmenko" title="Code">💻</a> </td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/LorenaCapraru"><img src="https://avatars.githubusercontent.com/u/108892538?v=4" width="100px;" alt="Lorena"/><br /><sub><b>Lorena</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=LorenaCapraru" title="Code">💻</a></td>
        </tr>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://shayanmahnam.netlify.app"><img src="https://avatars.githubusercontent.com/u/95313895?v=4?s=100" width="100px;" alt="Shayan Mahnam"/><br /><sub><b>Shayan Mahnam</b></sub></a><br /><a href="#projectManagement-ShayanMahnam" title="FrontEnd">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Bahare09"><img src="https://avatars.githubusercontent.com/u/108987748?v=4" width="100px;" alt="Bahare"/><br /><sub><b>Bahare</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=Bahare09" title="Code">📆</a></td>
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/laxmikckarki"><img src="https://avatars.githubusercontent.com/u/108900563?v=4" width="100px;" alt="Laxmi"/><br /><sub><b>Laxmi</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=laxmikckarki" title="Code">💻</a></td>
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/Tony-devops"><img src="https://avatars.githubusercontent.com/u/111275895?v=4" width="100px;" alt="Tony"/><br /><sub><b>Tony</b></sub></a><br /><a href="https://github.com/Bahare09/team-game-rock-paper-scissors/commits?author=Tony-devops" title="Code">💻</a> </td>
         </tr>
