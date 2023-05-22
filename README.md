@@ -30,7 +30,7 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 
 ## Flow Chart
 
-<img src="flowchart.jpg" alt='flowchart'/>
+<img src="Flowchart.jpg" alt='flowchart'/>
 
 ## Features
 
