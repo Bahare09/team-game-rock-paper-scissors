@@ -56,9 +56,9 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 ```mermaid
 pie
     title Languages Used
-    "JavaScript" : 67%
-    "CSS" : 31.3%
-    "HTML" : 1.7%
+    "JavaScript" : 67
+    "CSS" : 31.3
+    "HTML" : 1.7
 ```
 
 ## Installation
