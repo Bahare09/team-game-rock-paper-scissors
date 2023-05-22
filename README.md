@@ -6,7 +6,10 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This is a creative representation of the well-known Rock-Paper-Scissors Game implemented using React.js.
+This is a team-work approach for Rock-Paper-Scissors Online Multiplayer Game implemented using React.js in Front-end and Node.js in Back-end.
+The main challenge was to enable instant communication between 2 players without any delays.
+Therefore, Socket.io library is used to enable this feature.
+The application is
 
 ## Deployed Website
 
