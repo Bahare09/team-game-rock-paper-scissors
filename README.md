@@ -41,7 +41,7 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 
 ## Flow Chart
 
-<img src="https://drive.google.com/file/d/1jxH-NDwTPhtZhP4-7f1x4VQkSfbrFRCK/view?usp=sharing" alt='flowchart'/>
+<img src="https://drive.google.com/file/d/1jxH-NDwTPhtZhP4-7f1x4VQkSfbrFRCK/view" alt='flowchart'/>
 
 ## Technologies Used:
 
