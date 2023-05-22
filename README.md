@@ -54,7 +54,7 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 ## Pie Chart Of Technologies
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#FFFFFF', 'pie2': '#FFFF00', 'pie3': '#00FF00'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#ff6978', 'pie2': '#b1ede8', 'pie3': '#fffcf9'}}}%%
 
 pie
     title Languages Used
