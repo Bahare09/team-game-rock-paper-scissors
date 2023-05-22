@@ -30,13 +30,7 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 
 ## Flow Chart
 
-```mermaid
-graph LR
-A[Hard edge] -->B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
-```
+<img src="flowchart.jpg" alt='flowchart'/>
 
 ## Features
 
