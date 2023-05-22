@@ -28,6 +28,19 @@ Access the deployed version of the application: <a href="https://rock-paper-scis
 - There are 3 options at the end of a Round: User Wins, Computer Wins or Tie.
 - The Game ends when a player wins 3 Rounds.
 
+### FlowChart
+
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
 ## Features
 
 - [x] The game establishes 2 options based on number of participants:
